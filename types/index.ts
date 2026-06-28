@@ -2,6 +2,8 @@ export interface Profile {
   name: string;
   title: string;
   bio: string;
+  available: boolean;
+  availabilityText: string;
 }
 
 export interface Project {
