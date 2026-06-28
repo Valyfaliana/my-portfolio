@@ -16,10 +16,11 @@ This file is the single source of truth for any AI agent (GitHub Copilot, Claude
 
 ## 🏗️ Stack
 
-- **Framework:** Next.js 14 (App Router)
-- **Language:** TypeScript (strict)
-- **Styling:** Tailwind CSS + `globals.css` for CSS variables
-- **Icons:** lucide-react
+- **Framework:** Next.js 16.2.9 (App Router)
+- **Language:** TypeScript 5
+- **React:** 19.2.4
+- **Styling:** Tailwind CSS 4 + `globals.css` for CSS variables
+- **Icons:** lucide-react 1.21.0, react-icons 5.6.0
 - **Package manager:** npm
 
 ---

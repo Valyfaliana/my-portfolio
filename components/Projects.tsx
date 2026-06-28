@@ -29,7 +29,7 @@ const projects: Project[] = [
 
 const Projects: React.FC = () => {
   return (
-    <section>
+    <section id="projects">
       <h2>Projets</h2>
       <div>
         {projects.map((project) => (

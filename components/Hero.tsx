@@ -1,35 +1,39 @@
-"use client";
+import { profile, links } from "@/lib/data";
+import { Mail } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
-import Link from "next/link";
+const iconMap = { Github: FaGithub, Linkedin: FaLinkedin, Mail };
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 px-4">
-      <div className="max-w-4xl mx-auto text-center">
-        <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-          Welcome to My Portfolio
+    <section className="min-h-screen flex flex-col justify-center py-24 px-6">
+      <div className="max-w-5xl mx-auto w-full">
+        <p className="text-xs uppercase tracking-widest text-accent mb-4">
+          Available for opportunities
+        </p>
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-text mb-4">
+          {profile.name}
         </h1>
-        <p className="text-xl md:text-2xl text-slate-300 mb-8 max-w-2xl mx-auto">
-          I'm a passionate developer creating beautiful and functional web
-          experiences.
+        <h2 className="text-xl md:text-2xl text-muted mb-6">
+          {profile.title}
+        </h2>
+        <p className="text-base md:text-lg text-muted max-w-2xl mb-10 leading-relaxed">
+          {profile.bio}
         </p>
-        <p className="text-lg text-slate-400 mb-12 max-w-2xl mx-auto">
-          Explore my projects, learn about my skills, and let's build something
-          amazing together.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link
-            href="#projects"
-            className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors"
-          >
-            View My Work
-          </Link>
-          <Link
-            href="#contact"
-            className="px-8 py-3 bg-slate-700 hover:bg-slate-600 text-white font-semibold rounded-lg transition-colors border border-slate-600"
-          >
-            Get In Touch
-          </Link>
+        <div className="flex gap-4">
+          {links.map((link) => {
+            const Icon = iconMap[link.icon as keyof typeof iconMap];
+            return (
+              <a
+                key={link.label}
+                href={link.url}
+                className="flex items-center gap-2 px-4 py-2 rounded-lg border border-border text-muted hover:text-text hover:border-accent transition-colors duration-200"
+              >
+                {Icon && <Icon size={16} />}
+                {link.label}
+              </a>
+            );
+          })}
         </div>
       </div>
     </section>

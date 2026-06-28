@@ -1,4 +1,4 @@
-import { Profile, Project, Skill, Link } from "@/types";
+import { NavLink, Profile, Project, Skill, Link } from "@/types";
 
 export const profile: Profile = {
   name: "Andrianimpanana Valy Ifaliana",
@@ -54,4 +54,10 @@ export const links: Link[] = [
   { label: "GitHub", url: "#", icon: "Github" },
   { label: "LinkedIn", url: "#", icon: "Linkedin" },
   { label: "Email", url: "mailto:#", icon: "Mail" },
+];
+
+export const navLinks: NavLink[] = [
+  { label: "Projects", href: "#projects" },
+  { label: "Skills", href: "#skills" },
+  { label: "Contact", href: "#contact" },
 ];

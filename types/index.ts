@@ -22,3 +22,8 @@ export interface Link {
   url: string;
   icon: string;
 }
+
+export interface NavLink {
+  label: string;
+  href: string;
+}
