@@ -11,12 +11,9 @@ export default function Hero() {
         <p className="text-xs uppercase tracking-widest text-accent mb-4">
           Available for opportunities
         </p>
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-text mb-4">
-          {profile.name}
-        </h1>
-        <h2 className="text-xl md:text-2xl text-muted mb-6">
+        <h1 className="text-4xl md:text-6xl font-heading tracking-tight text-text mb-4">
           {profile.title}
-        </h2>
+        </h1>
         <p className="text-base md:text-lg text-muted max-w-2xl mb-10 leading-relaxed">
           {profile.bio}
         </p>

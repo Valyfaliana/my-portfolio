@@ -10,7 +10,7 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-bg/80 backdrop-blur-md">
       <div className="mx-auto flex h-28 max-w-5xl items-center justify-between px-6">
-        <p className="text-sm font-semibold text-text tracking-wide">
+        <p className="font-heading font-bold text-text tracking-wide">
           {profile.name}
         </p>
 
