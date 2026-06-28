@@ -59,7 +59,7 @@ export const links: Link[] = [
 ];
 
 export const navLinks: NavLink[] = [
-  { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
+  { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
