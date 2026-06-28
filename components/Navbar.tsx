@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { HiBars3, HiXMark } from "react-icons/hi2";
 import { profile, navLinks } from "@/lib/data";
+import PrimaryBtn from "./ui/PrimaryBtn";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -15,15 +16,24 @@ export default function Navbar() {
         </p>
 
         <nav className="hidden items-center gap-8 md:flex">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-muted transition-colors duration-200 hover:text-accent active:text-accent"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            if (link.label.toLowerCase() === "contact")
+              return (
+                <PrimaryBtn key={link.href} href={link.href}>
+                  {link.label}
+                </PrimaryBtn>
+              );
+            else
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-muted transition-colors duration-200 hover:text-accent active:text-accent"
+                >
+                  {link.label}
+                </a>
+              );
+          })}
         </nav>
 
         <button
