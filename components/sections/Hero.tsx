@@ -1,9 +1,9 @@
 import { profile, links } from "@/lib/data";
 import { Mail } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import LogoMarquee from "./LogoMarquee";
-import AvailabilityBadge from "./AvailabilityBadge";
-import HeroAvatar from "./HeroAvatar";
+import LogoMarquee from "../LogoMarquee";
+import AvailabilityBadge from "../AvailabilityBadge";
+import HeroAvatar from "../HeroAvatar";
 
 const iconMap = { Github: FaGithub, Linkedin: FaLinkedin, Mail };
 
@@ -28,6 +28,8 @@ export default function Hero() {
                   <a
                     key={link.label}
                     href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-2 px-4 py-2 rounded-lg border border-border text-muted hover:text-text hover:border-accent transition-colors duration-200"
                   >
                     {Icon && <Icon size={16} />}
