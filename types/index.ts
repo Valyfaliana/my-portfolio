@@ -4,6 +4,7 @@ export interface Profile {
   bio: string;
   available: boolean;
   availabilityText: string;
+  avatarUrl: string;
 }
 
 export interface Project {

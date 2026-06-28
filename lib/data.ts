@@ -6,6 +6,7 @@ export const profile: Profile = {
   bio: "4th-year Electronics & Computer Science student with a passion for building full-stack products — from blockchain traceability systems to AI-powered surveillance. I love turning complex problems into clean, impactful solutions.",
   available: true,
   availabilityText: "Available for opportunities",
+  avatarUrl: "/avatar.png",
 };
 
 export const skills: Skill[] = [
