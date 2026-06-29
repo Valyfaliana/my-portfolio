@@ -1,5 +1,7 @@
 import { skills } from "@/lib/data";
 import SkillCard from "@/components/ui/SkillCard";
+import SectionTitle from "@/components/ui/SectionTitle";
+import ScrollReveal from "../ui/ScrollReveal";
 
 export default function Skills() {
   return (
@@ -11,15 +13,17 @@ export default function Skills() {
         <p className="text-xs uppercase tracking-widest text-muted mb-2">
           Tech Stack
         </p>
-        <h2 className="text-3xl md:text-4xl font-heading font-bold tracking-tight text-text mb-12">
+        <SectionTitle className="mb-12 text-3xl font-heading font-bold tracking-tight text-text md:text-4xl">
           Skills
-        </h2>
+        </SectionTitle>
 
-        <div className="flex flex-wrap justify-center items-center gap-6">
-          {skills.map((skill) => (
-            <SkillCard key={skill.name} skill={skill} />
-          ))}
-        </div>
+        <ScrollReveal>
+          <div className="flex flex-wrap justify-center items-center gap-6">
+            {skills.map((skill) => (
+              <SkillCard key={skill.name} skill={skill} />
+            ))}
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

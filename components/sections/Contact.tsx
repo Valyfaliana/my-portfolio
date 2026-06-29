@@ -1,5 +1,7 @@
 import { contactSection } from "@/lib/data";
 import MyContact from "../ui/MyContact";
+import SectionTitle from "../ui/SectionTitle";
+import ScrollReveal from "../ui/ScrollReveal";
 
 export default function Contact() {
   return (
@@ -20,13 +22,15 @@ export default function Contact() {
           <div aria-hidden className="absolute inset-0 bg-bg/35" />
 
           <div className="relative mx-auto flex max-w-2xl flex-col items-center text-center">
-            <h2 className="mb-4 text-2xl font-heading font-bold tracking-tight text-text md:text-4xl">
+            <SectionTitle className="mb-4 text-2xl font-heading font-bold tracking-tight text-text md:text-4xl">
               {contactSection.title}
-            </h2>
+            </SectionTitle>
        
-            <p className="mb-8 text-base text-muted md:text-xl">
-              {contactSection.description}
-            </p>
+            <ScrollReveal>
+              <p className="mb-8 text-base text-muted md:text-xl">
+                {contactSection.description}
+              </p>
+            </ScrollReveal>
 
             <MyContact className="mb-0 flex-wrap items-center justify-center" />
           </div>
