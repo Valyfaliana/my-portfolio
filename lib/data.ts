@@ -10,20 +10,20 @@ export const profile: Profile = {
 };
 
 export const skills: Skill[] = [
-  { name: "React", category: "frontend" },
-  { name: "Next.js", category: "frontend" },
-  { name: "TypeScript", category: "frontend" },
-  { name: "Node.js", category: "backend" },
-  { name: "Express", category: "backend" },
-  { name: "Django", category: "backend" },
-  { name: "Symfony", category: "backend" },
-  { name: "FastAPI", category: "backend" },
-  { name: "Solidity", category: "blockchain" },
-  { name: "Hardhat", category: "blockchain" },
-  { name: "PyTorch", category: "ai" },
-  { name: "scikit-learn", category: "ai" },
-  { name: "React Native", category: "mobile" },
-  { name: "n8n", category: "devops" },
+  { name: "React", category: "frontend", logo: "/skills/react.svg" },
+  { name: "Next.js", category: "frontend", logo: "/skills/nextjs.svg" },
+  { name: "TypeScript", category: "frontend", logo: "/skills/typescript.svg" },
+  { name: "Node.js", category: "backend", logo: "/skills/nodejs.svg" },
+  { name: "Express", category: "backend", logo: "/skills/express.svg" },
+  { name: "Django", category: "backend", logo: "/skills/django.svg" },
+  { name: "Symfony", category: "backend", logo: "/skills/symfony.svg" },
+  { name: "FastAPI", category: "backend", logo: "/skills/fastapi.svg" },
+  { name: "Solidity", category: "blockchain", logo: "/skills/solidity.svg" },
+  { name: "Hardhat", category: "blockchain", logo: "/skills/hardhat.svg" },
+  { name: "PyTorch", category: "ai", logo: "/skills/pytorch.svg" },
+  { name: "scikit-learn", category: "ai", logo: "/skills/scikit-learn.svg" },
+  { name: "React Native", category: "mobile", logo: "/skills/react-native.svg" },
+  { name: "n8n", category: "devops", logo: "/skills/n8n.svg" },
 ];
 
 export const projects: Project[] = [
