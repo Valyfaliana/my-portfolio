@@ -2,6 +2,7 @@ export interface Profile {
   name: string;
   title: string;
   bio: string;
+  tagline: string;
   available: boolean;
   availabilityText: string;
   avatarUrl: string;

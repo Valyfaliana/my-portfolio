@@ -4,6 +4,8 @@ export const profile: Profile = {
   name: "Andrianimpanana Valy Ifaliana",
   title: "Full Stack Developer",
   bio: "4th-year Electronics & Computer Science student with a passion for building full-stack products — from blockchain traceability systems to AI-powered surveillance. I love turning complex problems into clean, impactful solutions.",
+  tagline:
+    "I build fast, polished full-stack products that users love and businesses rely on.",
   available: true,
   availabilityText: "Available for opportunities",
   avatarUrl: "/avatar.png",

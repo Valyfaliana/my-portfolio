@@ -7,7 +7,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="skills bg-surface flex flex-col justify-center items-center min-h-[60vh] py-24 px-6"
+      className="skills bg-surface flex flex-col justify-center items-center min-h-[60vh] py-36 px-6"
     >
       <div className="max-w-5xl mx-auto w-full flex flex-col justify-center items-center">
         <p className="text-xs uppercase tracking-widest text-muted mb-4 bg-bg px-3 py-2 rounded-full">
@@ -17,7 +17,7 @@ export default function Skills() {
           Tools I Build With
         </SectionTitle>
         <p className="text-muted text-xl mb-12 w-full max-w-2xl lg:max-w-lg xl:max-w-md 2xl:max-w-sm mx-auto text-center">
-          A curated set of technologies I rely on to build modern web experiences
+          My go-to stack for building modern apps
         </p>
 
         <ScrollReveal>

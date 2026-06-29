@@ -1,4 +1,5 @@
 import { contactSection } from "@/lib/data";
+import ContactFooter from "../ui/ContactFooter";
 import MyContact from "../ui/MyContact";
 import SectionTitle from "../ui/SectionTitle";
 import ScrollReveal from "../ui/ScrollReveal";
@@ -35,6 +36,8 @@ export default function Contact() {
             <MyContact className="mb-0 flex-wrap items-center justify-center" />
           </div>
         </div>
+
+        <ContactFooter />
       </div>
     </section>
   );
