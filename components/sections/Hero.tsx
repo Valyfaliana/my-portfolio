@@ -1,12 +1,8 @@
-import { profile, links } from "@/lib/data";
-import { Mail } from "lucide-react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { profile } from "@/lib/data";
 import LogoMarquee from "../ui/LogoMarquee";
 import AvailabilityBadge from "../ui/AvailabilityBadge";
 import HeroAvatar from "../ui/HeroAvatar";
-import OutlineBtn from "../ui/OutlineBtn";
-
-const iconMap = { Github: FaGithub, Linkedin: FaLinkedin, Mail };
+import MyContact from "../ui/MyContact";
 
 export default function Hero() {
   return (
@@ -22,20 +18,7 @@ export default function Hero() {
             <p className="text-base md:text-lg text-muted mb-10 leading-relaxed">
               {profile.bio}
             </p>
-            <div className="flex gap-4 mb-10">
-              {links.map((link) => {
-                const Icon = iconMap[link.icon as keyof typeof iconMap];
-                return (
-                  <OutlineBtn
-                    key={link.label}
-                    href={link.url}
-                  >
-                    {Icon && <Icon size={16} />} &nbsp;
-                    {link.label}
-                  </OutlineBtn>
-                );
-              })}
-            </div>
+            <MyContact />
 
             <LogoMarquee />
           </div>

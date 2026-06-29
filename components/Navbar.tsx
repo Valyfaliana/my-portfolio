@@ -25,7 +25,11 @@ export default function Navbar() {
       type="button"
       onClick={toggleTheme}
       className="inline-flex items-center justify-center rounded-full border border-border p-2 text-muted transition-colors duration-200 hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent"
-      aria-label={`Switch to ${resolvedTheme === "dark" ? "light" : "dark"} mode`}
+      aria-label={
+        mounted
+          ? `Switch to ${resolvedTheme === "dark" ? "light" : "dark"} mode`
+          : "Toggle theme"
+      }
     >
       {mounted ? (
         resolvedTheme === "light" ? (
