@@ -6,6 +6,7 @@ import { useTheme } from "next-themes";
 import { HiBars3, HiXMark } from "react-icons/hi2";
 import { profile, navLinks } from "@/lib/data";
 import PrimaryBtn from "./ui/PrimaryBtn";
+import RoundAvatar from "./ui/RoundAvatar";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -46,9 +47,12 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-bg/80 backdrop-blur-md">
       <div className="mx-auto flex h-28 max-w-5xl items-center justify-between px-6">
-        <p className="font-heading font-bold text-text tracking-wide">
-          {profile.name}
-        </p>
+        <div className="flex items-center gap-3">
+          <RoundAvatar src={profile.avatarUrl} alt={profile.name} />
+          <p className="font-heading font-bold text-text tracking-wide">
+            {profile.name}
+          </p>
+        </div>
 
         <div className="hidden items-center gap-4 md:flex">
           <nav className="flex items-center gap-8">
