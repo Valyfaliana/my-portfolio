@@ -18,6 +18,8 @@ export default function MyContact({ className = "" }: MyContactProps) {
         <OutlineBtn
           key={link.label}
           href={link.url}
+          target="_blank"
+          rel="noopener noreferrer"
         >
           {Icon && <Icon size={16} />} &nbsp;
           {link.label}

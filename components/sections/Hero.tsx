@@ -2,7 +2,8 @@ import { profile } from "@/lib/data";
 import LogoMarquee from "../ui/LogoMarquee";
 import AvailabilityBadge from "../ui/AvailabilityBadge";
 import HeroAvatar from "../ui/HeroAvatar";
-import MyContact from "../ui/MyContact";
+import OutlineBtn from "../ui/OutlineBtn";
+import PrimaryBtn from "../ui/PrimaryBtn";
 
 export default function Hero() {
   return (
@@ -18,7 +19,15 @@ export default function Hero() {
             <p className="text-base md:text-lg text-muted mb-10 leading-relaxed">
               {profile.bio}
             </p>
-            <MyContact />
+            <div className="flex gap-4 mb-8">
+              <OutlineBtn href="#projects">
+                See my work
+              </OutlineBtn>
+              <PrimaryBtn href="#contact">
+                Contact Me
+              </PrimaryBtn>
+            </div>
+       
 
             <LogoMarquee />
           </div>
