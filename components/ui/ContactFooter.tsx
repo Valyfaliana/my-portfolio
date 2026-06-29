@@ -3,7 +3,7 @@ import RoundAvatar from "./RoundAvatar";
 
 export default function ContactFooter() {
   return (
-    <div className="mt-12 flex flex-col gap-8 border-b border-border pb-10 md:flex-row md:items-start md:justify-between">
+    <div className="mt-12 flex flex-col gap-8 pb-10 md:flex-row md:items-start md:justify-between">
       <div className="flex flex-col gap-4">
         <div className="flex items-center gap-3">
           <RoundAvatar
