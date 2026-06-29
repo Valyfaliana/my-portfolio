@@ -31,3 +31,8 @@ export interface NavLink {
   label: string;
   href: string;
 }
+
+export interface ContactSection {
+  title: string;
+  description: string;
+}

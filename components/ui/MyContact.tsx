@@ -5,9 +5,13 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const iconMap = { Github: FaGithub, Linkedin: FaLinkedin, Mail };
 
-export default function MyContact() {
+interface MyContactProps {
+  className?: string;
+}
+
+export default function MyContact({ className = "" }: MyContactProps) {
   return (
-    <div className="flex gap-4 mb-10">
+    <div className={`mb-10 flex gap-4 ${className}`}>
     {links.map((link) => {
       const Icon = iconMap[link.icon as keyof typeof iconMap];
       return (

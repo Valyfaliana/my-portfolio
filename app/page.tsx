@@ -1,3 +1,4 @@
+import Contact from "@/components/sections/Contact";
 import Footer from "@/components/sections/Footer";
 import Hero from "@/components/sections/Hero";
 import Navbar from "@/components/Navbar";
@@ -11,6 +12,7 @@ export default function Home() {
       <Hero />
       <Skills />
       <Projects />
+      <Contact />
       <Footer />
     </main>
   );

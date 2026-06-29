@@ -1,4 +1,4 @@
-import { NavLink, Profile, Project, Skill, Link } from "@/types";
+import { ContactSection, Link, NavLink, Profile, Project, Skill } from "@/types";
 
 export const profile: Profile = {
   name: "Andrianimpanana Valy Ifaliana",
@@ -64,3 +64,9 @@ export const navLinks: NavLink[] = [
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
+
+export const contactSection: ContactSection = {
+  title: "Let's Build Something That Matters",
+  description:
+    "Student, but not junior in mindset. Real products — blockchain, AI, SaaS. If you have a serious idea, let's make it happen.",
+};

@@ -1,5 +1,4 @@
 import { ArrowRight } from "lucide-react";
-import Link from "next/link";
 
 interface PrimaryButtonProps {
   href: string;
@@ -11,12 +10,12 @@ export default function PrimaryBtn({
   children,
 }: PrimaryButtonProps) {
   return (
-    <Link
+    <a
       href={href}
       className="inline-flex items-center gap-3 rounded-full bg-myPrimary px-4 py-2 font-semibold text-bg transition-all duration-300"
     >
       {children}
       <ArrowRight size={20} strokeWidth={2.5} />
-    </Link>
+    </a>
   );
 }
