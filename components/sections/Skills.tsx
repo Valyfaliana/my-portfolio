@@ -10,12 +10,15 @@ export default function Skills() {
       className="skills bg-surface flex flex-col justify-center items-center min-h-[60vh] py-24 px-6"
     >
       <div className="max-w-5xl mx-auto w-full flex flex-col justify-center items-center">
-        <p className="text-xs uppercase tracking-widest text-muted mb-2">
+        <p className="text-xs uppercase tracking-widest text-muted mb-4 bg-bg px-3 py-2 rounded-full">
           Tech Stack
         </p>
-        <SectionTitle className="mb-12 text-3xl font-heading font-bold tracking-tight text-text md:text-4xl">
+        <SectionTitle className="mb-4 text-3xl font-heading font-bold tracking-tight text-text md:text-4xl">
           Tools I Build With
         </SectionTitle>
+        <p className="text-muted text-xl mb-12 w-full max-w-2xl lg:max-w-lg xl:max-w-md 2xl:max-w-sm mx-auto text-center">
+          A curated set of technologies I rely on to build modern web experiences
+        </p>
 
         <ScrollReveal>
           <div className="flex flex-wrap justify-center items-center gap-6">

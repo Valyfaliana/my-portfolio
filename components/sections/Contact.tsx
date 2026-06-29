@@ -5,7 +5,7 @@ import ScrollReveal from "../ui/ScrollReveal";
 
 export default function Contact() {
   return (
-    <section id="contact" className="bg-surface px-6 py-36 md:py-48">
+    <section id="contact" className="bg-surface px-6 py-24">
       <div className="mx-auto w-full max-w-5xl">
         <div className="relative overflow-hidden rounded-3xl border border-border bg-surface px-8 py-32 md:px-12 md:py-44">
           <div
