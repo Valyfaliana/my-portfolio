@@ -1,12 +1,43 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Moon as MoonIcon, Sun as SunIcon } from "lucide-react";
+import { useTheme } from "next-themes";
 import { HiBars3, HiXMark } from "react-icons/hi2";
 import { profile, navLinks } from "@/lib/data";
 import PrimaryBtn from "./ui/PrimaryBtn";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme, setTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const toggleTheme = () => {
+    setTheme(resolvedTheme === "dark" ? "light" : "dark");
+  };
+
+  const themeToggleButton = (
+    <button
+      type="button"
+      onClick={toggleTheme}
+      className="inline-flex items-center justify-center rounded-full border border-border p-2 text-muted transition-colors duration-200 hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent"
+      aria-label={`Switch to ${resolvedTheme === "dark" ? "light" : "dark"} mode`}
+    >
+      {mounted ? (
+        resolvedTheme === "light" ? (
+          <SunIcon size={20} />
+        ) : (
+          <MoonIcon size={20} />
+        )
+      ) : (
+        <span className="inline-block size-5" aria-hidden />
+      )}
+    </button>
+  );
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-bg/80 backdrop-blur-md">
@@ -15,36 +46,42 @@ export default function Navbar() {
           {profile.name}
         </p>
 
-        <nav className="hidden items-center gap-8 md:flex">
-          {navLinks.map((link) => {
-            if (link.label.toLowerCase() === "contact")
-              return (
-                <PrimaryBtn key={link.href} href={link.href}>
-                  {link.label}
-                </PrimaryBtn>
-              );
-            else
-              return (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-muted transition-colors duration-200 hover:text-accent active:text-accent"
-                >
-                  {link.label}
-                </a>
-              );
-          })}
-        </nav>
+        <div className="hidden items-center gap-4 md:flex">
+          <nav className="flex items-center gap-8">
+            {navLinks.map((link) => {
+              if (link.label.toLowerCase() === "contact")
+                return (
+                  <PrimaryBtn key={link.href} href={link.href}>
+                    {link.label}
+                  </PrimaryBtn>
+                );
+              else
+                return (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="text-muted font-heading transition-colors duration-200 hover:text-accent active:text-accent"
+                  >
+                    {link.label}
+                  </a>
+                );
+            })}
+          </nav>
+          {themeToggleButton}
+        </div>
 
-        <button
-          type="button"
-          onClick={() => setOpen((prev) => !prev)}
-          className="inline-flex items-center justify-center rounded-lg border border-border p-2 text-muted transition-colors duration-200 hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent md:hidden"
-          aria-label="Toggle navigation"
-          aria-expanded={open}
-        >
-          {open ? <HiXMark size={20} /> : <HiBars3 size={20} />}
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          {themeToggleButton}
+          <button
+            type="button"
+            onClick={() => setOpen((prev) => !prev)}
+            className="inline-flex items-center justify-center rounded-lg border border-border p-2 text-muted transition-colors duration-200 hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent"
+            aria-label="Toggle navigation"
+            aria-expanded={open}
+          >
+            {open ? <HiXMark size={20} /> : <HiBars3 size={20} />}
+          </button>
+        </div>
       </div>
 
       {open ? (

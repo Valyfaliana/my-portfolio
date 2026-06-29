@@ -3,7 +3,7 @@ import React from "react";
 
 const Projects: React.FC = () => {
   return (
-    <section id="projects" className="projects bg-bg flex flex-col justify-center py-24 px-6">
+    <section id="projects" className="projects bg-bg flex flex-col justify-center py-24 px-6 text-text">
       <h2>Projets</h2>
       <div>
         {projects.map((project, index) => (

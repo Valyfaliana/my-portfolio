@@ -11,7 +11,7 @@ export default function OutlineBtn({ href, children }: OutlineButtonProps) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center justify-center rounded-full border border-white px-4 py-2 font-semibold text-white"
+      className="inline-flex items-center justify-center rounded-full border border-myPrimary px-4 py-2 font-semibold text-myPrimary"
     >
       {children}
     </Link>

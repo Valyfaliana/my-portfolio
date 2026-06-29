@@ -13,7 +13,7 @@ export default function PrimaryBtn({
   return (
     <Link
       href={href}
-      className="inline-flex items-center gap-3 rounded-full bg-white px-4 py-2 font-semibold text-black transition-all duration-300"
+      className="inline-flex items-center gap-3 rounded-full bg-myPrimary px-4 py-2 font-semibold text-bg transition-all duration-300"
     >
       {children}
       <ArrowRight size={20} strokeWidth={2.5} />

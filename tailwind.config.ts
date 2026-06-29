@@ -11,6 +11,7 @@ const config: Config = {
         muted: "var(--color-muted)",
         accent: "var(--color-accent)",
         accentHover: "var(--color-accent-hover)",
+        myPrimary: "var(--color-myPrimary)"
       },
       fontFamily: {
         sans: ["var(--font-sans)"],
