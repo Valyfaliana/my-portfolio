@@ -136,6 +136,7 @@
 
 .scroll-reveal[data-revealed="true"] {
   animation: reveal-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: var(--reveal-delay, 0s);
 }
 
 @media (prefers-reduced-motion: reduce) {

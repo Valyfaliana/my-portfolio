@@ -14,7 +14,7 @@ export default function Skills() {
           Tech Stack
         </p>
         <SectionTitle className="mb-12 text-3xl font-heading font-bold tracking-tight text-text md:text-4xl">
-          Skills
+          Tools I Build With
         </SectionTitle>
 
         <ScrollReveal>
