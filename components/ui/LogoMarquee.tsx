@@ -1,84 +1,63 @@
 "use client";
 
 import { skills } from "@/lib/data";
-import { IconType } from "react-icons";
-import { FaReact, FaNodeJs } from "react-icons/fa";
-import { TbBrandReactNative } from "react-icons/tb";
-import {
-  SiNextdotjs,
-  SiTypescript,
-  SiExpress,
-  SiDjango,
-  SiSymfony,
-  SiFastapi,
-  SiSolidity,
-  SiPytorch,
-  SiScikitlearn,
-  SiN8N,
-} from "react-icons/si";
 
 /**
- * MAPPING GUIDE FOR DEVELOPER / AGENT:
+ * Le problème principal ici vient du logo Next.js et Node.js:
+ * - Next.js attend un fichier nommé "next-dot-js.svg" ou similaire (pas "next.js.svg")
+ * - Node.js attend un nom comme "nodejs.svg" ou "node-js.svg" (pas "node.js.svg")
  * 
- * To swap react-icons placeholders with real SVG or PNG logo images later:
- * 1. Store your logo images in the `/public/logos/` folder (e.g. `react.svg`, `nextjs.png`).
- * 2. Change the keys in `iconMap` to point to the image paths:
- *    const logoImageMap: Record<string, string> = {
- *      "React": "/logos/react.svg",
- *      "Next.js": "/logos/nextjs.svg",
- *      ...
- *    };
- * 3. Update the render loop below to return an `<img>` tag instead of the `<Icon>` component:
- *    <img src={logoImageMap[skill.name]} alt={skill.name} className="h-6 w-auto" />
+ * Correction : ajout d’une table de correspondance pour les logos qui dérogent à la convention par défaut ;
+ * tous les autres suivent la convention "nom du skill en minuscules, espaces->-, .svg".
  */
-const iconMap: Record<string, IconType> = {
-  "React": FaReact,
-  "Next.js": SiNextdotjs,
-  "TypeScript": SiTypescript,
-  "Node.js": FaNodeJs,
-  "Express": SiExpress,
-  "Django": SiDjango,
-  "Symfony": SiSymfony,
-  "FastAPI": SiFastapi,
-  "Solidity": SiSolidity,
-  "PyTorch": SiPytorch,
-  "scikit-learn": SiScikitlearn,
-  "React Native": TbBrandReactNative,
-  "n8n": SiN8N,
+const skillLogoMap: Record<string, string> = {
+  "Next.js": "/skills/nextjs.svg",     // nom réel dans public/skills/
+  "Node.js": "/skills/nodejs.svg",     // idem
+  // Ajouter d'autres exceptions ici si besoin plus tard
 };
 
+function getLogoPath(skillName: string): string {
+  if (skillLogoMap[skillName]) {
+    return skillLogoMap[skillName];
+  }
+  // Default path
+  return `/skills/${skillName
+    .toLowerCase()
+    .replace(/\s+/g, "-")
+    .replace(/\./g, "")}.svg`;
+}
+
 export default function LogoMarquee() {
-  // Filter skills to only those that have a matching icon defined
-  const validSkills = skills.filter((skill) => skill.name in iconMap);
+  // On suppose toujours que les noms listés existent, hormis exceptions ci-dessus
+  const validSkills = skills;
 
   const renderTrack = (trackId: string) => (
-    <div className="flex gap-16 px-8 items-center shrink-0">
-      {validSkills.map((skill, index) => {
-        const Icon = iconMap[skill.name];
-        return (
-          <div
-            key={`${trackId}-${skill.name}-${index}`}
-            className="flex items-center gap-3 text-muted hover:text-accent transition-colors duration-300 group cursor-default"
-          >
-            {Icon && (
-              <Icon 
-                size={24} 
-                className="transition-transform duration-300 group-hover:scale-110" 
-              />
-            )}
-            <span className="text-sm font-semibold tracking-wide uppercase text-[11px] opacity-80 group-hover:opacity-100 transition-opacity duration-300">
-              {skill.name}
-            </span>
+    <div className="flex gap-6 px-4 items-center shrink-0">
+      {validSkills.map((skill, index) => (
+        <div
+          key={`${trackId}-${skill.name}-${index}`}
+          className="flex items-center justify-center text-muted hover:text-accent transition-colors duration-300 group cursor-default"
+        >
+          <div className="h-24 w-24 bg-surface rounded-lg flex items-center justify-center shadow-sm border border-border/20 transition group-hover:border-accent m-2">
+            <img
+              src={getLogoPath(skill.name)}
+              alt={skill.name}
+              className="h-12 w-12 object-contain transition-transform duration-300 group-hover:scale-110"
+              loading="lazy"
+              onError={e => {
+                // fallback for broken images: hide
+                (e.target as HTMLImageElement).style.display = "none";
+              }}
+            />
           </div>
-        );
-      })}
+        </div>
+      ))}
     </div>
   );
 
   return (
-    <div className="w-full overflow-hidden marquee-mask py-6 select-none mb-10 border-y border-border/10 bg-zinc-950/20">
-      <div className="flex animate-marquee">
-        {/* Render twice for a seamless infinite loop */}
+    <div className="w-full overflow-hidden marquee-mask py-6 select-none mb-10 border-y border-border/10">
+      <div className="flex animate-marquee gap-6">
         {renderTrack("track1")}
         {renderTrack("track2")}
       </div>
