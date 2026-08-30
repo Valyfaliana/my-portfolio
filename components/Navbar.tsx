@@ -2,19 +2,17 @@
 
 import { useState } from "react";
 import { Moon as MoonIcon, Sun as SunIcon } from "lucide-react";
-import { useTheme } from "next-themes";
 import { HiBars3, HiXMark } from "react-icons/hi2";
 import { profile, navLinks } from "@/lib/data";
+import { useTheme } from "./ThemeProvider";
 import PrimaryBtn from "./ui/PrimaryBtn";
 import RoundAvatar from "./ui/RoundAvatar";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
-  const mounted = resolvedTheme !== undefined;
 
   const toggleTheme = () => {
-    if (!mounted) return;
     setTheme(resolvedTheme === "dark" ? "light" : "dark");
   };
 
@@ -23,21 +21,9 @@ export default function Navbar() {
       type="button"
       onClick={toggleTheme}
       className="inline-flex items-center justify-center rounded-full border border-border p-2 text-muted transition-colors duration-200 hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent"
-      aria-label={
-        mounted
-          ? `Switch to ${resolvedTheme === "dark" ? "light" : "dark"} mode`
-          : "Toggle theme"
-      }
+      aria-label={`Switch to ${resolvedTheme === "dark" ? "light" : "dark"} mode`}
     >
-      {mounted ? (
-        resolvedTheme === "light" ? (
-          <SunIcon size={20} />
-        ) : (
-          <MoonIcon size={20} />
-        )
-      ) : (
-        <span className="inline-block size-5" aria-hidden />
-      )}
+      {resolvedTheme === "light" ? <SunIcon size={20} /> : <MoonIcon size={20} />}
     </button>
   );
 
