@@ -1,14 +1,18 @@
-import Footer from "@/components/Footer";
-import Hero from "@/components/Hero";
-import Projects from "@/components/Projects";
-import Skills from "@/components/Skills";
+import Contact from "@/components/sections/Contact";
+import Footer from "@/components/sections/Footer";
+import Hero from "@/components/sections/Hero";
+import Navbar from "@/components/Navbar";
+import Projects from "@/components/sections/Projects";
+import Skills from "@/components/sections/Skills";
 
 export default function Home() {
   return (
-    <main className="bg-zinc-950 text-white min-h-screen">
+    <main className="bg-bg text-white min-h-screen pt-16">
+      <Navbar />
       <Hero />
       <Skills />
       <Projects />
+      <Contact />
       <Footer />
     </main>
   );
