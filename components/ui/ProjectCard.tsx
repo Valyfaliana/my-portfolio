@@ -12,13 +12,26 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     <article className="flex flex-col overflow-hidden rounded-2xl border-none bg-surface p-2">
       <div className="relative mb-2 aspect-[16/10] overflow-hidden rounded-2xl bg-bg">
         {project.image ? (
-          <Image
-            src={project.image}
-            alt={project.name}
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, 50vw"
-          />
+          project.name === "Fanevao" ? (
+            <div className="flex h-full w-full items-center justify-center overflow-hidden rounded-2xl bg-bg">
+              <Image
+                src={project.image}
+                alt={project.name}
+                width={640}
+                height={400}
+                className="h-full w-auto max-w-none object-contain"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
+          ) : (
+            <Image
+              src={project.image}
+              alt={project.name}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          )
         ) : (
           <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-bg to-surface">
             <span className="font-heading text-4xl font-bold text-muted/30">

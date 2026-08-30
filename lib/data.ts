@@ -25,6 +25,7 @@ export const skills: Skill[] = [
   { name: "PyTorch", category: "ai", logo: "/skills/pytorch.svg" },
   { name: "scikit-learn", category: "ai", logo: "/skills/scikit-learn.svg" },
   { name: "React Native", category: "mobile", logo: "/skills/react-native.svg" },
+  { name: "Supabase", category: "backend", logo: "/skills/supabase.svg" },
   { name: "n8n", category: "devops", logo: "/skills/n8n.svg" },
 ];
 
@@ -34,24 +35,28 @@ export const projects: Project[] = [
     description:
       "Blockchain-based platform to trace agricultural products from Madagascar.",
     techs: ["Solidity", "Hardhat", "React", "IPFS", "Pinata", "Express"],
+    image: "/projects/madtx.png",
   },
   {
-    name: "Scooly",
+    name: "Skooly",
     description:
       "SaaS for school management — facilitates communication between schools, parents, and teachers, and improves student performance tracking.",
     techs: ["React", "Symfony"],
+    image: "/projects/skooly.jpeg",
   },
   {
     name: "Sentinelle Intelligente",
     description:
       "AI-powered surveillance system for protected areas, piloted by intelligent agents.",
     techs: ["React", "FastAPI", "scikit-learn", "PyTorch"],
+    image: "/projects/sentinelle-intelligent.png",
   },
   {
     name: "Fanevao",
     description:
       "Mobile app for teachers to monetize their courses and manage their in-person class schedule.",
     techs: ["React Native", "Supabase"],
+    image: "/projects/fanevao.png",
   },
 ];
 
