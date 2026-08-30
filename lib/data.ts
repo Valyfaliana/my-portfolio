@@ -57,8 +57,8 @@ export const projects: Project[] = [
 
 export const links: Link[] = [
   { label: "GitHub", url: "https://github.com/Valyfaliana", icon: "Github" },
-  { label: "LinkedIn", url: "https://linkedin.com/in/valy-andrianimpanana-55617a234", icon: "Linkedin" },
-  { label: "Email", url: "mailto:#", icon: "Mail" },
+  { label: "LinkedIn", url: "https://www.linkedin.com/in/valy-ifaliana-andrianimpanana", icon: "Linkedin" },
+  { label: "Email", url: "mailto:valyandrianimpanana@gmail.com", icon: "Mail" },
 ];
 
 export const navLinks: NavLink[] = [

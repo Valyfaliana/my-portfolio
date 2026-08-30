@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Moon as MoonIcon, Sun as SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
 import { HiBars3, HiXMark } from "react-icons/hi2";
@@ -10,14 +10,11 @@ import RoundAvatar from "./ui/RoundAvatar";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = resolvedTheme !== undefined;
 
   const toggleTheme = () => {
+    if (!mounted) return;
     setTheme(resolvedTheme === "dark" ? "light" : "dark");
   };
 
