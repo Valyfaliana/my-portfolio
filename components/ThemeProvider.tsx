@@ -15,6 +15,7 @@ type ThemeMode = Theme | "system";
 type ThemeContextValue = {
   theme: ThemeMode;
   resolvedTheme: Theme;
+  mounted: boolean;
   setTheme: (theme: ThemeMode) => void;
 };
 
@@ -45,6 +46,7 @@ export function ThemeProvider({
   defaultTheme = "dark",
   enableSystem = true,
 }: ThemeProviderProps) {
+  const [mounted, setMounted] = useState(false);
   const [theme, setThemeState] = useState<ThemeMode>(() => {
     if (typeof window === "undefined") return defaultTheme;
     return (window.localStorage.getItem("theme") as ThemeMode | null) ?? defaultTheme;
@@ -56,20 +58,27 @@ export function ThemeProvider({
   );
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+
     document.documentElement.setAttribute(attribute, resolvedTheme);
 
     if (typeof window !== "undefined") {
       window.localStorage.setItem("theme", theme);
     }
-  }, [attribute, resolvedTheme, theme]);
+  }, [attribute, mounted, resolvedTheme, theme]);
 
   const value = useMemo<ThemeContextValue>(
     () => ({
       theme,
       resolvedTheme,
+      mounted,
       setTheme: (nextTheme: ThemeMode) => setThemeState(nextTheme),
     }),
-    [resolvedTheme, theme],
+    [mounted, resolvedTheme, theme],
   );
 
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
@@ -82,6 +91,7 @@ export function useTheme() {
     return {
       theme: "dark",
       resolvedTheme: "dark",
+      mounted: true,
       setTheme: () => {},
     } satisfies ThemeContextValue;
   }
